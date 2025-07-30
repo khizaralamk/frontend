@@ -3,8 +3,9 @@ import Navbar from './components/Navbar'
 import ClubsBanner from './components/ClubsBanner'
 import FeaturedCollection from './components/FeaturedCollection'
 import OurClubs from './components/OurClubs'
+import TestimonialsAndNumbers from './components/TestimonialsAndNumbers'
 import ContactUs from './components/ContactUs'
-import logo from './assets/icons/cronaldosports-06.png'
+import logo from './assets/icons/cronaldosports-03.png'
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -32,7 +33,7 @@ export default function App() {
 
   if (isLoading) {
     return (
-      <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
+      <div className="fixed inset-0 bg-white flex items-center justify-center z-50 bg-black">
         <div className={`transition-all duration-1000 ${showLogo ? 'opacity-100' : 'opacity-0'}`}>
           <img 
             src={logo} 
@@ -45,11 +46,13 @@ export default function App() {
   }
 
   return (
-    <div className='bg-white'>
+    // Main application container
+    <div className='bg-white transition-all duration-1000'>
       <Navbar />
       <ClubsBanner />
       <FeaturedCollection />
       <OurClubs />
+      <TestimonialsAndNumbers />
       <ContactUs />
     </div>
   )

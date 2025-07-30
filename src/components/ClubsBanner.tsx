@@ -2,26 +2,26 @@ import React, { useState, useEffect } from 'react'
 
 // Carousel data
 const carouselData = [
-  {
+   {
     id: 1,
-    title: "FC Barcelona",
-    image: "https://wallpapercave.com/wp/wp15449355.jpg"
+    title: "Join the Champions",
+    image: "https://wallpapercave.com/wp/wp12233046.jpg"
   },
   {
     id: 2,
     title: "Real Madrid",
-    image: "https://wallpaperbat.com/img/8047354-4k-wallpaper-desktop.jpg"
+    image: "https://www.cdeportiva.com/wp-content/uploads/2023/11/Real-Madrid-3-1200x780.jpg"
   },
   {
     id: 3,
     title: "Man city",
     image: "https://wallpapercave.com/wp/wp4565642.jpg"
   },
-  {
+   {
     id: 4,
-    title: "Join the Champions",
-    image: "https://wallpapercave.com/wp/wp12233046.jpg"
-  }
+    title: "FC Barcelona",
+    image: "https://i.pinimg.com/originals/50/dd/37/50dd37e486d40a7ea217c326c9f3efdb.jpg"
+  },
 ]
 
 export default function ClubsBanner() {
@@ -37,7 +37,7 @@ export default function ClubsBanner() {
   }, [])
 
   return (
-    <div className="w-full h-[65vh] relative overflow-hidden">
+    <div className="w-full h-[60vh] relative overflow-hidden">
       {carouselData.map((slide, index) => (
         <div
           key={slide.id}

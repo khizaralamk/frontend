@@ -102,63 +102,54 @@ const clubsData = [
 
 export default function OurClubs() {
   return (
-    <section className="py-16 px-8 bg-white">
+    <section className="bg-white py-20 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 font-['Plus_Jakarta_Sans']">
-            Our Partner Clubs
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-black tracking-tight mb-4 font-['Big_Shoulders_Display']">
+            CLUBS WE OFFER
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto font-['Plus_Jakarta_Sans']">
             Official merchandise from the world's most prestigious football clubs
           </p>
         </div>
 
         {/* Clubs Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-12">
           {clubsData.map((club) => (
-            <div 
-              key={club.id} 
-              className="group cursor-pointer"
-            >
-              <div className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-all duration-300 hover:shadow-md">
-                {/* Club Logo */}
-                <div className="relative mb-3">
-                  <img 
-                    src={club.logo} 
-                    alt={`${club.name} logo`}
-                    className="w-full h-16 object-contain group-hover:scale-110 transition-transform duration-300"
-                    onError={(e) => {
-                      // Fallback for broken images
-                      e.currentTarget.src = 'https://via.placeholder.com/80x80?text=' + club.name.charAt(0)
-                    }}
-                  />
-                </div>
-                
-                {/* Club Name */}
-                <h3 className="text-sm font-semibold text-gray-900 text-center line-clamp-2 group-hover:text-black transition-colors duration-200">
-                  {club.name}
-                </h3>
-                
-                {/* League */}
-                <p className="text-xs text-gray-500 text-center mt-1">
-                  {club.league}
-                </p>
-              </div>
-            </div>
+            <ClubItem key={club.id} club={club} />
           ))}
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-12">
-          <p className="text-gray-600 mb-4">
-            Can't find your favorite club? We're constantly adding new partnerships!
-          </p>
-          <button className="bg-black text-white px-6 py-2 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 text-sm">
-            Request a Club
-          </button>
         </div>
       </div>
     </section>
+  )
+}
+
+function ClubItem({ club }: { club: any }) {
+  return (
+    <div className="text-center space-y-4">
+      {/* Club Logo */}
+      <div className="mb-4">
+        <img 
+          src={club.logo} 
+          alt={`${club.name} logo`}
+          className="w-20 h-20 object-contain mx-auto"
+          onError={(e) => {
+            // Fallback for broken images
+            e.currentTarget.src = 'https://via.placeholder.com/80x80?text=' + club.name.charAt(0)
+          }}
+        />
+      </div>
+      
+      {/* Club Name */}
+      <h3 className="font-bold text-black font-['Big_Shoulders_Display'] text-lg">
+        {club.name}
+      </h3>
+      
+      {/* League */}
+      <p className="text-sm text-gray-500 font-['Plus_Jakarta_Sans']">
+        {club.league}
+      </p>
+    </div>
   )
 } 
