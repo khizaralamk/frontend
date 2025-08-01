@@ -10,7 +10,7 @@ const carouselData = [
   {
     id: 2,
     title: "Real Madrid",
-    image: "https://www.cdeportiva.com/wp-content/uploads/2023/11/Real-Madrid-3-1200x780.jpg"
+    image: "https://wallpapercave.com/wp/wp13712167.jpg"
   },
   {
     id: 3,
