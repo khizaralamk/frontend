@@ -102,7 +102,7 @@ const clubsData = [
 
 export default function OurClubs() {
   return (
-    <section className="bg-white py-20 px-6">
+    <section id="clubs" className="bg-white py-20 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">

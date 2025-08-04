@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import ClubsBanner from './components/ClubsBanner'
 import FeaturedCollection from './components/FeaturedCollection'
 import OurClubs from './components/OurClubs'
+import OurProducts from './components/OurProducts'
 import TestimonialsAndNumbers from './components/TestimonialsAndNumbers'
 import ContactUs from './components/ContactUs'
+import ProductDetail from './components/ProductDetail'
+import CollectionsPage from './components/CollectionsPage'
+import CartSidebar from './components/CartSidebar'
+import SEO from './components/SEO'
+import { CartProvider } from './context/CartContext'
 import logo from './assets/icons/cronaldosports-03.png'
 
 export default function App() {
@@ -46,14 +53,32 @@ export default function App() {
   }
 
   return (
-    // Main application container
-    <div className='bg-white transition-all duration-1000'>
-      <Navbar />
-      <ClubsBanner />
-      <FeaturedCollection />
-      <OurClubs />
-      <TestimonialsAndNumbers />
-      <ContactUs />
-    </div>
+    <CartProvider>
+      {/* Main application container */}
+      <div className='bg-white transition-all duration-1000'>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <SEO 
+                title="Cronaldo Sports - Premium Football Jerseys & Sports Gear"
+                description="Shop official football jerseys from top clubs like FC Barcelona, Real Madrid, Arsenal, PSG, Manchester City, and Liverpool. Authentic sports gear with worldwide shipping."
+                keywords="football jerseys, soccer shirts, sports gear, FC Barcelona, Real Madrid, Arsenal, PSG, Manchester City, Liverpool, official jerseys, football kits"
+                url="https://cronaldosports.com"
+              />
+              <Navbar />
+              <ClubsBanner />
+              <FeaturedCollection />
+              <OurClubs />
+              <OurProducts />
+              <TestimonialsAndNumbers />
+              <ContactUs />
+            </>
+          } />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/collections" element={<CollectionsPage />} />
+        </Routes>
+        <CartSidebar />
+      </div>
+    </CartProvider>
   )
 }

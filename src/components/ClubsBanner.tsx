@@ -47,7 +47,7 @@ export default function ClubsBanner() {
           style={{ backgroundImage: `url('${slide.image}')` }}
         >
           {/* Vignette overlay from bottom */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
           <div className="absolute bottom-8 left-8 mb-8">
             <h1 className="text-white text-5xl font-['Plus_Jakarta_Sans'] font-bold px-8">
               {slide.title}
